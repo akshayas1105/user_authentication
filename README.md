@@ -17,4 +17,7 @@ user-auth-system/<br>
 <ul>
 <li>Installed node.js packages<br></li></ul><br>
 
-DAY-2:Added template.html structuring the home page of the project and added rotes for register and login page which will be more flurished later<br>
+DAY-2:<br>
+<ul>
+<li>Added template.html structuring the home page of the project and added rotes for register and login page which will be more flurished later</li>
+<li>Added register.html and its corresponding path</li></ul><br>
