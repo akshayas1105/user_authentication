@@ -5,16 +5,16 @@ DAY-1:Starting with Installation
 <br>
 Current structure:
 <br>
-user-auth-system/
-├── app.js               # Main server file
-├── package.json         # Node.js dependencies
-├── README.md            # Project description
-├── public/
-│   └── style.css        # CSS file
-└── templates/
-    └── templates.html   # Your HTML file (can be split later)
+user-auth-system/<br>
+├── app.js               # Main server file<br>
+├── package.json         # Node.js dependencies<br>
+├── README.md            # Project description<br>
+├── public/<br>
+│   └── style.css        # CSS file<br>
+└── templates/<br>
+    └── templates.html   # Your HTML file (can be split later)<br>
 <br>
 <ul>
-<li>Installed node.js packages<br></li></ul>
+<li>Installed node.js packages<br></li></ul><br>
 
-DAY-2:
+DAY-2:Added template.html structuring the home page of the project and added rotes for register and login page which will be more flurished later<br>

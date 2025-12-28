@@ -42,6 +42,11 @@ app.get('/register', (req, res) => {
     res.send("Registration page will be implemented soon");
 });
 
+// Serve login page (Phase 3 placeholder)
+app.get('/login', (req, res) => {
+    res.send("Login page will be implemented soon");
+});
+
 // Start server
 app.listen(3000, () => {
     console.log("Server running at http://localhost:3000");
