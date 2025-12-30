@@ -21,3 +21,7 @@ DAY-2:<br>
 <ul>
 <li>Added template.html structuring the home page of the project and added rotes for register and login page which will be more flurished later</li>
 <li>Added register.html and its corresponding path</li></ul><br>
+<br>
+#Day-3:
+<ul><li>Added login.html and its backend logic and related to the sessions security</li></ul>
+<br>
