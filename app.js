@@ -89,7 +89,9 @@ app.post('/login', async (req, res) => {
         req.session.userId = user._id;
         req.session.username = user.username;
 
-        res.send("Login successful!");
+        
+        res.redirect('/dashboard');
+
     } catch (err) {
         res.send("Error: " + err.message);
     }
@@ -98,6 +100,18 @@ app.post('/login', async (req, res) => {
 // Serve login page (Phase 3 placeholder)
 app.get('/login', (req, res) => {
     res.sendFile(path.join(__dirname, 'templates', 'login.html'));
+});
+app.get('/dashboard', (req, res) => {
+    if (!req.session.userId) {
+        return res.redirect('/');
+    }
+    res.send("Welcome to Dashboard");
+    res.sendFile(path.join(__dirname, 'templates', 'dashboard.html'));
+});
+app.get('/logout', (req, res) => {
+    req.session.destroy(() => {
+        res.redirect('/');
+    });
 });
 
 // Start server
