@@ -17,6 +17,24 @@ app.use(session({
     saveUninitialized: true
 }));
 
+// Middleware setup
+app.use(express.static(path.join(__dirname, 'public'))); // Serve CSS
+app.use(bodyParser.urlencoded({ extended: true }));
+
+app.use(session({
+    secret: 'your_secret_key',
+    resave: false,
+    saveUninitialized: true
+}));
+//Middleware for clean route
+function isLoggedIn(req, res, next) {
+    if (!req.session.userId) {
+        return res.redirect('/login');
+    }
+    next();
+}
+
+
 // MongoDB connection (local Compass)
 mongoose.connect('mongodb://127.0.0.1:27017/userAuthDB')
     .then(() => console.log("MongoDB connected"))
@@ -62,7 +80,8 @@ app.post('/register', async (req, res) => {
 
         await newUser.save();
 
-        res.send("Registration successful!");
+        res.redirect('/login');
+
     } catch (err) {
         res.send("Error: " + err.message);
     }
@@ -101,17 +120,19 @@ app.post('/login', async (req, res) => {
 app.get('/login', (req, res) => {
     res.sendFile(path.join(__dirname, 'templates', 'login.html'));
 });
-app.get('/dashboard', (req, res) => {
-    if (!req.session.userId) {
-        return res.redirect('/');
-    }
-    res.send("Welcome to Dashboard");
-    res.sendFile(path.join(__dirname, 'templates', 'dashboard.html'));
-});
+
 app.get('/logout', (req, res) => {
     req.session.destroy(() => {
         res.redirect('/');
     });
+});
+// Dashboard route (protected using middleware)
+app.get('/dashboard', isLoggedIn, (req, res) => {
+    res.send(`
+        <h1>Welcome, ${req.session.username}</h1>
+        <p>You are successfully logged in.</p>
+        <a href="/logout">Logout</a>
+    `);
 });
 
 // Start server
