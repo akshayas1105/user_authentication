@@ -127,13 +127,12 @@ app.get('/logout', (req, res) => {
     });
 });
 // Dashboard route (protected using middleware)
-app.get('/dashboard', isLoggedIn, (req, res) => {
-    res.send(`
-        <h1>Welcome, ${req.session.username}</h1>
-        <p>You are successfully logged in.</p>
-        <a href="/logout">Logout</a>
-    `);
+
+   app.get('/dashboard', isLoggedIn, (req, res) => {
+    res.sendFile(path.join(__dirname, 'templates', 'dashboard.html'));
 });
+
+
 
 // Start server
 app.listen(3000, () => {

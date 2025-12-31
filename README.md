@@ -27,3 +27,6 @@ DAY-2:<br>
 <br>
 #Day-4:<br>
 <ul><li>Added Username on dashboard ,added a middleware to have a clean route and cleaner structure</li></ul>
+
+#Day-5:<br>
+<ul><li>Modified the structure of frontend with formal designs</li></ul>

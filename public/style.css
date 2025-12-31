@@ -1,0 +1,116 @@
+* {
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: #f4f6f8;
+    margin: 0;
+    padding: 0;
+}
+
+/* Common container used in all pages */
+.container {
+    width: 400px;
+    margin: 100px auto;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 6px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+h1, h2 {
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    color: #555;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.nav-links a,
+.switch-link a {
+    text-decoration: none;
+    color: #007bff;
+    margin: 0 10px;
+}
+
+.nav-links {
+    margin-top: 20px;
+}
+
+.logout-btn {
+    display: inline-block;
+    margin-top: 20px;
+    color: #dc3545;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 15px;
+    border-radius: 5px;
+    background-color: #f8d7da; /* soft red background for logout button */
+}
+
+.logout-btn:hover {
+    background-color: #f5c6cb;
+}
+
+/* ------------------------------
+   Dashboard-specific styling
+--------------------------------*/
+.dashboard-container {
+    width: 450px; /* slightly bigger for dashboard */
+    margin: 80px auto;
+    background-color: #ffffff;
+    padding: 35px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.dashboard-container h1 {
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.dashboard-container .welcome-text {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 25px;
+}
+
+.dashboard-container .dashboard-actions .logout-btn {
+    background-color: #d9534f;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 20px;
+}
+
+.dashboard-container .dashboard-actions .logout-btn:hover {
+    background-color: #4ae172;
+}
